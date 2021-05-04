@@ -21,8 +21,15 @@ public class TestNGGoogleDemo {
 
 	}
 	
+	/**Navigate to  https://www.google.com
+	 * Pass data in search functionality and click search
+	 * Data - Valid Data - "Automation Step by step
+	 * Data - invalid Data -""
+		**/
 	
 	public static void beforeTest() {
+		
+		System.out.println("***************************Initializing Web Driver********************");
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\JAVALEARN\\filewriting\\chromedriver.exe");	
 		driver = new ChromeDriver();
@@ -33,6 +40,8 @@ public class TestNGGoogleDemo {
 
 
 		public static void test1() {
+			
+			System.out.println("***************************Valid Credentials********************");
 
 		 driver.findElement(By.name("q")).sendKeys("Automation step by step");
 		 driver.findElement(By.name("btnK")).click();
@@ -45,6 +54,7 @@ public class TestNGGoogleDemo {
 		
 		public static void test3() {
 		
+			System.out.println("***************************Invalid Credentials********************");
 		driver.findElement(By.name("q")).sendKeys("");
 		driver.findElement(By.xpath("//div[@class='FPdoLc tfB0Bf']//input[@class='gNO89b']")).click();
 		System.out.println("This is test3>>>>>>!!!!");
